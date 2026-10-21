@@ -99,12 +99,25 @@ color:white;
 
 <h2>Send Message</h2>
 <form id ="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-Left">
-<form action="https://api.web3forms.com/submit" method="POST" class="contact-Left">
-<input type="hidden" name="access_key" value="ae835acf-2710-4772-808f-6f746cf3d205">
+<input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
 
 <input type="text"name="Name" placeholder="Your Name" class="contact-inputs" required><br><br>
-<input type="text"name="Email" placeholder="Your Email" class="contact-inputs" required><br><br>
-<input type="text"name="Phone Number" placeholder="Your Phone Number" class="contact-inputs" required><br><br>
+<input
+    type="email"
+    name="Email"
+    id="contactEmail"
+    placeholder="Your Email"
+    class="contact-inputs"
+    required>
+<input
+    type="tel"
+    name="Phone Number"
+    id="contactPhone"
+    placeholder="Your Phone Number"
+    class="contact-inputs"
+    maxlength="10"
+    inputmode="numeric"
+    required>
 <textarea name="Message" placeholder="Your Message" class="contact-inputs" required></textarea><br><br>
 <textarea name="Address" placeholder="Your Address" class="contact-inputs" required></textarea><br><br>
 <button type="Submit">Send Message</button>

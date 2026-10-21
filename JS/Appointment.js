@@ -22,7 +22,27 @@ function getAppointments() {
 form.addEventListener("submit", function(event) {
 
     event.preventDefault();
+const email =
+    document.getElementById("email").value.trim();
 
+const emailPattern =
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+if (!emailPattern.test(email)) {
+
+    alert("Please enter a valid email address!");
+
+    return;
+}
+const mobile =
+    document.getElementById("mobile").value.trim();
+
+if (!/^[0-9]{10}$/.test(mobile)) {
+
+    alert("Please enter exactly 10 digit mobile number!");
+
+    return;
+}
     const appointment = {
 
         id: Date.now(),
@@ -31,7 +51,7 @@ form.addEventListener("submit", function(event) {
         age: document.getElementById("age").value,
         gender: document.getElementById("gender").value,
         mobile: document.getElementById("mobile").value,
-        email: document.getElementById("email").value,
+        email:email,
 
         department:
             document.getElementById("department").value,
